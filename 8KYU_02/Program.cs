@@ -21,6 +21,7 @@ internal class Program
         Console.ReadLine();
     }
 
+    // SOLUTION
     public static double basicOp(char operation, double value1, double value2)
     {
         return operation switch
