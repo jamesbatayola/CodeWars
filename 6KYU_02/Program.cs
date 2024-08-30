@@ -23,7 +23,9 @@ internal class Program
     {
         string[] names = { "Alex", "Jacob", "Mark", "Max" };
 
-        Console.WriteLine(Likes(names));
+        var s = names[1..3];
+
+        //Console.WriteLine(Likes(names));
 
         Console.ReadLine();
     }
