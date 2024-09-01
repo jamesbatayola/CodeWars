@@ -14,9 +14,9 @@ internal class Program
 
         count(asd);
       
-        Console.ReadLine();
+        Console.ReadLine();   
     }
-
+        
     // SOLUTION
     public static Dictionary<char, int> count(string str)
     {
@@ -24,4 +24,5 @@ internal class Program
               .GroupBy(x => x)
               .ToDictionary(x => x.Key, x => x.Count());
     }
+
 }
