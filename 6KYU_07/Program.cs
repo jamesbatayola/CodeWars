@@ -14,27 +14,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        //string strings = "ABBCcAD";
-
-        //ArrayList list = new ArrayList();
-
-        //// INITIAL VALUE
-        //char ini = strings[0];
-        //list.Add(ini);
-
-        //for(int i = 1; i < strings.Length; i++)
-        //{
-        //    if (ini != strings[i])
-        //    {
-        //        ini = strings[i];
-        //        list.Add(ini);
-        //    }
-        //}
-
-        //foreach(var i in list)
-        //    Console.WriteLine(i);
-
-        var asd = UniqueInOrder("");
+        var asd = UniqueInOrder("AABBCDdEEEE");
 
         foreach(var i in asd)
             Console.WriteLine(i);
