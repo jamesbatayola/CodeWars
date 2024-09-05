@@ -24,4 +24,11 @@ internal class Program
         return str.Count(x => rgx.IsMatch(x.ToString()));
     }
 
+    // OTHER ANSWER -------------------
+
+    public static int _GetVowelCount(string str)
+    {
+        return str.Count(i => "aeiou".Contains(i));
+    }
+
 }
