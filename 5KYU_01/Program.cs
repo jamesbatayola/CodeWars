@@ -14,11 +14,7 @@ internal class Program
     {
         int[] nums = { 2, 1, -3, 4, -1, 2, 1, -5, 4 };
 
-        int[] asd = { -5, 18, -1, -2 };
-
-        Console.WriteLine(asd.Sum());
-
-        //Console.WriteLine(MaxSequence(nums));
+        _MaxSequence(nums);
 
         Console.ReadLine();
     }
@@ -50,18 +46,49 @@ internal class Program
         return temp;
     }
 
-    // CLEVER! :O ----------------------------------------
+    // OTHER ANSWER --------------------------------------
 
     public static int _MaxSequence(int[] arr)
     {
-        int max = 0, res = 0, sum = 0;
-        foreach (var item in arr)
+        int currentMax = 0, totalMax = 0;
+        foreach (var a in arr)
         {
-            sum += item;
-            max = sum > max ? max : sum;
-            res = res > sum - max ? res : sum - max;
+            currentMax = Math.Max(0, currentMax + a);
+            totalMax = Math.Max(totalMax, currentMax);
         }
-        return res;
+        return totalMax;
+    }
+
+    public static int __MaxSequence(int[] arr)
+    {
+        int max = 0;
+        for (int i = 0; i < arr.Length; i++)
+        {
+            int sum = 0;
+            for (int j = i; j < arr.Length; j++)
+            {
+                sum += arr[j];
+                max = Math.Max(max, sum);
+            }
+        }
+        return max;
+    }
+
+    // CLEVER! :O ----------------------------------------
+
+    // { 2, 1, -3, 4, -1, 2, 1, -5, 4 } 
+    public static int ___MaxSequence(int[] arr)
+    {
+        int max = 0, res = 0, sum = 0;  // Initialize variables
+
+        foreach (var item in arr)  // Iterate over each element in the array
+        {
+            sum += item;  // Add the current element to the running sum
+            max = sum > max ? max : sum;  // Update max to be the minimum subarray sum encountered so far
+            res = res > sum - max ? res : sum - max;  // Update res to be the maximum difference, which is the max sum subarray
+        }
+
+        return res;  // Return the maximum sum of any contiguous subarray
     }
 
 }
