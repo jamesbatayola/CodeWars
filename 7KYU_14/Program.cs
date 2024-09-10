@@ -17,4 +17,11 @@ internal class Program
         return url.Contains("#") ? url.Remove(url.IndexOf("#")) : url;
     }
 
+    // OTHER ANSWER ----------
+
+    public static string _RemoveUrlAnchor(string url)
+    {
+        return url.Split('#')[0];
+    }
+
 }
