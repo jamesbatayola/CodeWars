@@ -8,7 +8,11 @@
 
 //If you can, try writing it in one line of code.
 
-int FindDifference(int[] a, int[] b)
+
+Console.WriteLine(FindDifference([1, 2, 3], [1, 2, 5]));
+
+// SOLUTION
+static int FindDifference(int[] a, int[] b)
 {
     return Math.Abs(a.Aggregate((x, y) => x * y) - b.Aggregate((x, y) => x * y));
 }
