@@ -20,7 +20,7 @@ internal class Program
 
         Console.ReadLine();
     }
-
+    
     // SOLUTION
     public static int Divisors(int n)
     {
