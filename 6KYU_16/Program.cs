@@ -11,8 +11,8 @@
 // All letters will be lowercase and all inputs will be valid.
 
 Console.WriteLine(High("man i need a taxi up to ubud"));
-//Console.WriteLine(High("what time are we climbing up to the volcano"));
-//Console.WriteLine(High("take me to semynak"));
+Console.WriteLine(High("what time are we climbing up to the volcano"));
+Console.WriteLine(High("take me to semynak"));
 
 static string High(string s)
 {
