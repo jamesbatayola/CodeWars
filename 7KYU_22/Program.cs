@@ -23,15 +23,28 @@
 //    +9 dog years for second year
 //    +5 dog years for each year after that
 
-Console.WriteLine(OwnedCatAndDog(15, 24));
+
+Console.WriteLine(OwnedCatAndDog(15, 15));
+Console.WriteLine(OwnedCatAndDog(12, 11));
 Console.WriteLine(OwnedCatAndDog(24, 24));
 Console.WriteLine(OwnedCatAndDog(56, 64));
 
+Console.WriteLine("\nRandom Test");
+
+Console.WriteLine(OwnedCatAndDog(12, 28));
+
 static (int, int) OwnedCatAndDog(int catYears, int dogYears)
 {
-    int catAge = catYears >= 28 ? 3 + (catYears - 28) / 4 : catYears >= 24 ? 2 : 1;
-    int dogAge = dogYears >= 29 ? 3 + (dogYears - 29) / 5 : dogYears >= 24 ? 2 : 1;
-
+    int catAge = catYears < 15 ? 0
+               : catYears < 24 ? 1
+               : catYears < 28 ? 2
+               : 3 + (catYears - 28) / 4;
+               
+    int dogAge = dogYears < 15 ? 0
+               : dogYears < 24 ? 1
+               : dogYears < 29 ? 2
+               : 3 + (dogYears - 29) / 5;
+        
     return (catAge, dogAge);
 }
 
