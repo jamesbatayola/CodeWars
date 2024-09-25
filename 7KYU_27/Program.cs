@@ -33,13 +33,6 @@
 
 //As the Next closest year with only distinct digits is 1023 s.
 
-int i = 0;
-
-while(i < 5)
-{
-    Console.WriteLine(i);
-    i++;
-}
 
 static short NextHappyYear(short year)
 {
