@@ -17,7 +17,6 @@
 
 // I have also created other katas. Take a look if you enjoyed this kata!
 
-
 Console.WriteLine(DontGiveMeFive(1,9));
 Console.WriteLine(DontGiveMeFive(4,17));
 
