@@ -55,9 +55,9 @@ static string Encode(string text, string key)
 {
     int pos = 1;
     string lText = text.ToLower();
-    string KEY = "cipherabdfgjklmnoqstuvwxyz";
+    string KEY =  "cipherabdfgjklmnoqstuvwxyz";
 
-    var sb = new StringBuilder();
+    var sb =  new StringBuilder();
 
     if (!text.Contains(" "))
     {
