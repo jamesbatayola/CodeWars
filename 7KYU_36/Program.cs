@@ -12,30 +12,32 @@
 
 using System.Text;
 
-//Console.WriteLine(new string[] { "a", "as", "asd" }.Max(e => e.Length));
+Console.WriteLine(Solve("codewarriors"));
+Console.WriteLine(Solve("suoidea"));
+Console.WriteLine(Solve("ultrarevolutionariees"));
+Console.WriteLine(Solve("strengthlessnesses"));
+Console.WriteLine(Solve("cuboideonavicuare"));
+Console.WriteLine(Solve("chrononhotonthuooaos"));
+Console.WriteLine(Solve("iiihoovaeaaaoougjyaw"));
 
-//Console.WriteLine(Solve("codewarriors"));
 
-//string asd = "   ssd  ds ds      sd";
-//var test = asd.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
-
-//foreach(var i in test)
-//{
-//    Console.WriteLine(i);
-//}
-
-Console.WriteLine(Solve("Codewars"));
+Console.WriteLine(Solve("ssss"));
 
 static int Solve(string str)
 {
     var sb = new StringBuilder();
 
-    for(int i =0; i < str.Length; i++)
+    for (int i = 0; i < str.Length; i++)
     {
-        sb.Append( "aeiou".Contains(str[i]) ? str[i] : " ");
+        sb.Append("aeiou".Contains(str[i]) ? str[i] : " ");
     }
 
-    return sb.ToString().ToLower().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Max(e => e.Length);    
+    if(sb.ToString().Any(e => "aeiou".Contains(e)))
+    {
+        return sb.ToString().ToLower().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Max(e => e.Length);
+    }
+
+    return 0;
 }
 
 Console.ReadLine();
