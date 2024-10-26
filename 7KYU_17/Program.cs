@@ -22,18 +22,59 @@
 // When three people meet whose native languages are German, French, and Romansh, the group language is Italian: DFK → I
 
 
-var asd = "iik".GroupBy(x => x).ToArray();
-Console.WriteLine(asd[0]);
+// var asd = "iik".GroupBy(x => x).ToArray();
+// Console.WriteLine(asd[0]);
 
-foreach(var i in asd)
-    Console.WriteLine(i.);
+Console.WriteLine(TrilingualDemocracy("FFF")); 
+Console.WriteLine(TrilingualDemocracy("IIK")); 
+Console.WriteLine(TrilingualDemocracy("DFK")); 
 
-//static char TrilingualDemocracy(string group)
-//{
-//    char[] lang = { 'D', 'F', 'I', 'K' };
-
-//    group.GroupBy(x => x)[0].Count > 1 ? ;
+static char TrilingualDemocracy(string group)
+{
+    char res = 'i';
     
-//}
+    var dict = new Dictionary<char, int>()
+    {
+        { 'D', 0 },
+        { 'F', 0 },
+        { 'I', 0 },
+        { 'K', 0 },
+    };
+
+    foreach (var each in group)
+    {
+        if (!dict.ContainsKey(each)) 
+            dict[each] += 1;
+        else 
+            dict[each] += 1;
+    }
+
+    foreach (var each in dict)
+    {
+        if (each.Value == 3)
+        {
+            res = each.Key;
+            break;
+        }
+        
+        if (each.Value == 2)
+        {
+            res = dict.First(e => e.Value == 1).Key;
+            break;
+        } 
+        
+        else 
+            res = dict.First(e => e.Value == 0).Key;
+    }
+
+    return res;
+}
+
+// OTHER ANSWERS
+
+static char _TrilingualDemocracy(string speakers)
+{
+    return (char)(speakers[0] ^ speakers[1] ^ speakers[2]);
+}
 
 Console.ReadLine();
