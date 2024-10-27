@@ -1,68 +1,46 @@
-﻿//Description:
-//Task
+﻿// Description:
+// Task
+//
+//     Your task is to write a function which returns the n-th term of the following series, which is the sum of the first n terms of the sequence (n is the input parameter).
+// Series:1+14+17+110+113+116+…\mathrm{Series:}\quad 1 + \frac14 + \frac17 + \frac1{10} + \frac1{13} + \frac1{16} + \dotsSeries:1+41​+71​+101​+131​+161​+…
+//
+// You will need to figure out the rule of the series to complete this.
+//     Rules
+//
+// You need to round the answer to 2 decimal places and return it as String.
+//
+//     If the given value is 0 then it should return "0.00".
+//
+//     You will only be given Natural Numbers as arguments.
+//
+//     Examples (Input --> Output)
+//
+// n
+// 1 --> 1 --> "1.00"
+// 2 --> 1 + 1/4 --> "1.25"
+// 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
 
-//Given two positive integers m (width) and n (height), fill a two-dimensional list (or array) of size m-by-n in the following way:
+// Console.WriteLine(seriesSum(1));
+// Console.WriteLine(seriesSum(2));
+// Console.WriteLine(seriesSum(5));
 
-//    (1) All the elements in the first and last row and column are 1.
+static string seriesSum (int n)
+{
+    double res = 0;
+    double r = 1.00;
 
-//    (2) All the elements in the second and second-last row and column are 2, excluding the elements from step 1.
+    for (int i = 0; i < n; i++)
+    {
+        res += (1 / r);
+        r += 3;
+    }
 
-//    (3) All the elements in the third and third-last row and column are 3, excluding the elements from the previous steps.
+    return res.ToString("0.00");
+}
 
-//    And so on ...
+// static string _seriesSum (int n)
+// {   
+//     Enumerable.Range(1, n)
+// }
 
-//Examples
-
-//Given m = 5, n = 8, your function should return
-
-//[[1, 1, 1, 1, 1],
-// [1, 2, 2, 2, 1],
-// [1, 2, 3, 2, 1],
-// [1, 2, 3, 2, 1],
-// [1, 2, 3, 2, 1], 
-// [1, 2, 3, 2, 1],
-// [1, 2, 2, 2, 1],
-// [1, 1, 1, 1, 1]]
-
-//Given m = 10, n = 9, your function should return
-
-//[[1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-// [1, 2, 2, 2, 2, 2, 2, 2, 2, 1],
-// [1, 2, 3, 3, 3, 3, 3, 3, 2, 1], 
-// [1, 2, 3, 4, 4, 4, 4, 3, 2, 1], 
-// [1, 2, 3, 4, 5, 5, 4, 3, 2, 1], 
-// [1, 2, 3, 4, 4, 4, 4, 3, 2, 1], 
-// [1, 2, 3, 3, 3, 3, 3, 3, 2, 1], 
-// [1, 2, 2, 2, 2, 2, 2, 2, 2, 1], 
-// [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
-
-// ----- UNFINISHED -----
-
-//var test = CreateBox(7, 8);
-
-//foreach(var row in test)
-//{
-//    Console.WriteLine(row);
-//}
-
-//static int[,] CreateBox(int m, int n)
-//{
-//    int[,] res = new int[m, n];
-
-//    for(int row = 0; row < n; row++)
-//    {
-//        res[row, 0] = 1; // first 
-//        for(int col = 1; col <= m - 1; col++)
-//        {
-//            res[row, col] = row == 0 || row == n ? 1 :
-//                        row == 1 || row == n - 1 || col == 1 || col == m - 1 ? 2 :
-//                        row == 2 || row == n - 2 || col == 2 || col == m - 2 ? 3 :
-//                        col;
-//        }
-//        res[row, m] = 1;
-//    }
-
-//    return res;
-//}
-
-//Console.ReadLine();
+Console.ReadLine();
