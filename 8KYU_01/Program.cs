@@ -5,8 +5,8 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Multiply(10);
-        Multiply(9);
+        Console.WriteLine(Multiply(10)); 
+        Console.WriteLine(Multiply(9)); 
     }
 
     // SOLUTION
