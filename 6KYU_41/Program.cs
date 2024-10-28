@@ -47,7 +47,7 @@ double[] Tribonacci(double[] signature, int n)
     return seq.ToArray();
 }
 
-// OTHER_ANSWERS -----------------------------------------
+// OTHER_ANSWERS ------------------------------------------
 
 double[] _Tribonacci(double[] s, int n)
 {
