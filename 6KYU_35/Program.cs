@@ -1,43 +1,33 @@
-﻿// Write Number in Expanded Form
+﻿// Write a method (or function, depending on the language) that converts a string to camelCase, that is, all words must have their first letter capitalized and spaces must be removed.
+//     Examples (input --> output):
+//
+// "hello case" --> "HelloCase"
+// "camel case word" --> "CamelCaseWord"
+//
+// Don't forget to rate this kata! Thanks :)
 
-// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+using Microsoft.VisualBasic.CompilerServices;
 
-// expandedForm(12)-- > should return "10 + 2"
-// expandedForm(42)-- > should return "40 + 2"
-// expandedForm(70304)-- > should return "70000 + 300 + 4"
-
-// NOTE: All numbers will be whole numbers greater than 0.
-
-using System.Text;
-
-Console.WriteLine(ExpandedForm(12));
-Console.WriteLine(ExpandedForm(43));
-Console.WriteLine(ExpandedForm(70304));
-
-static string ExpandedForm(long num)
-{ 
-    var digits = num.ToString();
-    var sb = new StringBuilder();
-
-    for (int i = 0; i < digits.Length; i++)
+public static class Kata
+{
+    public static void Main(string[] args)
     {
-        string temp = "";
-
-        temp += digits[i] != '0' && i != digits.Length ? $"{digits[i]} + {new string('0', digits.Length - i + 1)}" :
-                                    
-
-        if (digits[i] != '0' && i + 1 != digits.Length)
-        {
-            temp += 
-            //sb.Append(numString[i]);
-            //sb.Append('0', numString.Length - (i + 1));
-            //sb.Append(" + ");
-        }
-        else if (digits[i] != '0' && i + 1 == digits.Length)
-            sb.Append(digits[i]);
+        // Console.WriteLine(_CamelCase("test case"));
+        // Console.WriteLine(_CamelCase(" camel case method"));
+        // Console.WriteLine(_CamelCase("say hello"));
+        // Console.WriteLine(_CamelCase("                        "));
+        
+        Console.WriteLine(_CamelCase("lvccbwlybrfmf  dpnbz qsgjdqzfcpj cxlswlmhrqrsuwqz"));
     }
-
-    return sb.ToString();
+    
+    public static string _CamelCase(this string str)
+    {
+        if (str.Trim() == "") return str;
+        
+        string[] words = str.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        return string.Join("", words.Select(w => char.ToUpper(w[0]) + w.Substring(1)));
+    }
+    
 }
 
-Console.ReadLine();
+
