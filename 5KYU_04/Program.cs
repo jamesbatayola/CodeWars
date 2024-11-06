@@ -102,7 +102,3 @@ public class __TicTacToe
         return 0;
     }
 }
-
-
-
-Console.ReadLine();
