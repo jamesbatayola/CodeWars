@@ -10,9 +10,9 @@
 //
 // an array of test scores will be passed as a parameter ( "97", "62", "75", "85", "98", "98", "59", "81", "89" ). If the student doesn't accept the professors deal, their grade will be 82%. If the student does accept the professors deal, their scores will be ("97","75","85","81","89") for a grade of 85%. In this example the student should accept it.
 
-// Console.WriteLine(CalculateScores(2, new string[] { "97", "62", "75", "85", "98", "98", "59", "81", "89" }));
-// Console.WriteLine(CalculateScores(2, new string[] { "98", "70", "79", "78", "80", "85", "89", "80", "95" }));
-// Console.WriteLine(CalculateScores(1, ["99", "69", "69", "63", "73", "92", "91", "77", "99"]));
+Console.WriteLine(CalculateScores(2, new string[] { "97", "62", "75", "85", "98", "98", "59", "81", "89" }));
+Console.WriteLine(CalculateScores(2, new string[] { "98", "70", "79", "78", "80", "85", "89", "80", "95" }));
+Console.WriteLine(CalculateScores(1, ["99", "69", "69", "63", "73", "92", "91", "77", "99"]));
 
 Console.WriteLine(CalculateScores(3, ["74", "82", "90", "72", "91", "95", "73", "97", "79"]));
 
@@ -23,7 +23,9 @@ static bool CalculateScores(int numberToDrop, string[] examResults)
     var dropped = scores.Order().Skip(numberToDrop).SkipLast(numberToDrop).ToArray();
     
     double initAverage = scores.Average();
-    double dropedAverage = dropped.Average();
+    double droppedAverage = dropped.Average();
 
-    return dropedAverage > initAverage;
+    return droppedAverage > initAverage;
 }
+
+Console.ReadLine();
