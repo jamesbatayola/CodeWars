@@ -34,5 +34,5 @@ List<string> wave(string str)
         waves.Add(sb.ToString());
     }
 
-    return waves.ToList();
+    return waves;
 }
