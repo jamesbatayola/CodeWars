@@ -38,5 +38,16 @@ static string[][] Partlist(string[] arr)
     return result;
 }
 
-// make a 2d array with length of arr input minus 1
-// 
+// OTHER ANSWER -------------
+
+static string[][] _Partlist(string[] arr) 
+{
+    return Enumerable.Range(1,arr.Length-1)
+        .Select(x=>
+            new string[]{
+                string.Join(" ",arr.Take(x)),
+                string.Join(" ",arr.Skip(x).Take(arr.Length-x))
+            })
+        .ToArray();
+        
+}
