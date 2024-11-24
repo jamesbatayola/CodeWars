@@ -17,15 +17,13 @@
 //
 // I have created other katas. Have a look if you like coding and challenges.ello, World!");
 
-// var dummyArray1 = new Object[][] { [1, 2], [1, 2, 3, 4], [1], [1, 2, 3, 4, 5] };
-// var dummyArray2 = new Object[][] { [5, 2, 9], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9] };
-// var dummyArray3 = new Object[][] { [null], [null, null, null] };
-// var dummyArray4 = new Object[][]
-//     { ['a', 'a', 'a'], ['a', 'a'], ['a', 'a', 'a', 'a'], ['a'], ['a', 'a', 'a', 'a', 'a', 'a'] };
+var dummyArray1 = new Object[][] { [1, 2], [1, 2, 3, 4], [1], [1, 2, 3, 4, 5] };
+var dummyArray2 = new Object[][] { [5, 2, 9], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9] };
+var dummyArray3 = new Object[][] { [null], [null, null, null] };
+var dummyArray4 = new Object[][]
+    { ['a', 'a', 'a'], ['a', 'a'], ['a', 'a', 'a', 'a'], ['a'], ['a', 'a', 'a', 'a', 'a', 'a'] };
 var dummyArray5 = new Object[][] { [], [], [] };
-var dummyArray6 = null;
 
-// Console.WriteLine(new object?[] {  }.Length == 1);
 
 var test = GetLengthOfMissingArray(dummyArray5);
 
@@ -38,18 +36,13 @@ static int GetLengthOfMissingArray(object[][] arrayOfArrays)
     
     var grouped = arrayOfArrays.OrderBy(a => a.Length).ToArray();
     
-    int res = 0;
-    
     for (int i = 0; i < grouped.Length - 1; i++)
     {
         if (grouped[i].Length + 1 != grouped[i + 1].Length)
-        {
-            res = grouped[i].Length + 1;
-            break;
-        }
+            return grouped[i].Length + 1;
     }
 
-    return res;
+    return 0;
 }
 
 // group the array by ther length
